@@ -1,0 +1,6 @@
+*.pyc
+*.apk
+screenshots/
+tmp/
+.ropeproject/
+venv/
