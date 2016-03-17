@@ -38,7 +38,11 @@ Modify `lib/suite.py` to add more tests.
 
 ### Test on Testdroid cloud
 
-Make sure you properly set `TESTDROID_APIKEY` environment variable.
+Make sure you properly set `TESTDROID_APIKEY` environment variable. You may want to add it to user profile.
+
+```
+echo "export TESTDROID_APIKEY=xxx" >> ~/.bash_profile
+```
 
 There are several options to run tests on Testdroid cloud.
 
