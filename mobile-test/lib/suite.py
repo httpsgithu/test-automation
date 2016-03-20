@@ -56,13 +56,17 @@ class TestLantern(ParametrizedTestCase):
         log("Test: start and quit app")
         self.driver.save_screenshot(self.screenshotDir + "/1_appLaunch.png")
 
+        elems = self.driver.find_elements_by_class_name('android.widget.ToggleButton')
+        elems[0].click()
+        self.driver.save_screenshot(self.screenshotDir + "/2_toggleOn.png")
+
         # self.by_id('settings_icon').click() # it doesn't work on API 17 or below!
         elems = self.driver.find_elements_by_class_name('android.widget.ImageView')
         elems[0].click()
-        self.driver.save_screenshot(self.screenshotDir + "/2_showDrawer.png")
+        self.driver.save_screenshot(self.screenshotDir + "/3_showDrawer.png")
 
         self.by_text('Quit').click()
-        self.driver.save_screenshot(self.screenshotDir + "/3_quit.png")
+        self.driver.save_screenshot(self.screenshotDir + "/4_quit.png")
 
         # log("  Typing in name")
         # elems = self.driver.find_elements_by_class_name('android.widget.EditText')
