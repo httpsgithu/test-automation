@@ -44,6 +44,7 @@ class TestLantern(ParametrizedTestCase):
         except OSError, e:
             log("Fail to create screenshot directory %s: %s", self.screenshotDir, e)
 
+        self.desired_caps["autoAcceptAlerts"] = True
         log("WebDriver request initiated. Waiting for response, this typically takes 2-3 mins")
         self.driver = webdriver.Remote(self.hub_url, self.desired_caps)
         log("WebDriver response received")
@@ -59,6 +60,8 @@ class TestLantern(ParametrizedTestCase):
         elems = self.driver.find_elements_by_class_name('android.widget.ToggleButton')
         elems[0].click()
         self.driver.save_screenshot(self.screenshotDir + "/2_toggleOn.png")
+
+        # self.driver.switch_to.alert.accept() # not implemented yet
 
         # self.by_id('settings_icon').click() # it doesn't work on API 17 or below!
         elems = self.driver.find_elements_by_class_name('android.widget.ImageView')
