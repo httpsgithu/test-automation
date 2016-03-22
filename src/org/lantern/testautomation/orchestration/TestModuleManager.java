@@ -1,10 +1,10 @@
-package org.lantern.orchestration;
+package org.lantern.testautomation.orchestration;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
-import org.lantern.data.TestModuleData;
-import org.lantern.module.TestModule;
+import org.lantern.testautomation.data.TestModuleData;
+import org.lantern.testautomation.module.TestModule;
 
 public class TestModuleManager {
 
@@ -22,7 +22,7 @@ public class TestModuleManager {
 	TestModule getModuleInstance(String name){
 		TestModule module = null;
 		
-		name = "org.lantern.module."+name;
+		name = "org.lantern.testautomation.module."+name;
 		try{
 			Class<?> clazz = Class.forName(name);
 			Constructor<?> ctor = clazz.getConstructors()[0];

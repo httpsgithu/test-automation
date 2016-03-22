@@ -1,8 +1,8 @@
-package org.lantern.datareader;
+package org.lantern.testautomation.datareader;
 
-import org.lantern.data.TestCaseData;
-import org.lantern.data.TestModuleData;
-import org.lantern.data.TestScenarioData;
+import org.lantern.testautomation.data.TestCaseData;
+import org.lantern.testautomation.data.TestModuleData;
+import org.lantern.testautomation.data.TestScenarioData;
 
 public class FrameworkTestData {
 

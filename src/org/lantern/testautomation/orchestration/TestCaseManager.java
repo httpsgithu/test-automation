@@ -1,9 +1,10 @@
-package org.lantern.orchestration;
+package org.lantern.testautomation.orchestration;
 
 import java.util.ArrayList;
 
-import org.lantern.data.TestCaseData;
-import org.lantern.data.TestModuleData;
+import org.lantern.testautomation.data.TestCaseData;
+import org.lantern.testautomation.data.TestModuleData;
+import org.lantern.testautomation.result.TestResults;
 
 public class TestCaseManager {
 	
@@ -36,7 +37,10 @@ public class TestCaseManager {
 		ArrayList<TestModuleData> modules = (ArrayList<TestModuleData>)tcData.getContent();
 		
 		for(int i = 0 ;i <modules.size();i++){
-			mResult = moduleManager.runModule(modules.get(i));
+			TestModuleData module = modules.get(i);
+			mResult = moduleManager.runModule(module);
+			
+			TestResults.getInstance().setResult(tcData.getName(), module.getName(), mResult);
 			
 			if(!mResult){
 				cResult = false;

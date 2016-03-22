@@ -1,4 +1,4 @@
-package org.lantern.data;
+package org.lantern.testautomation.data;
 
 public class BaseData {
 

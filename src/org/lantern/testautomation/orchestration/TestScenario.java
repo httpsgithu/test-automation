@@ -1,14 +1,16 @@
-package org.lantern.orchestration;
+package org.lantern.testautomation.orchestration;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
-import org.lantern.data.TestCaseData;
-import org.lantern.data.TestScenarioData;
-import org.lantern.datareader.ExcelReader;
-import org.lantern.datareader.FrameworkTestData;
+import org.lantern.testautomation.data.TestCaseData;
+import org.lantern.testautomation.data.TestScenarioData;
+import org.lantern.testautomation.data.TestScenarioExecutionData;
+import org.lantern.testautomation.datareader.ExcelReader;
+import org.lantern.testautomation.datareader.FrameworkTestData;
+import org.lantern.testautomation.result.TestResults;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -31,9 +33,8 @@ public class TestScenario {
 		  
 		 testCaseManager = new TestCaseManager();
 		 xlReader = new ExcelReader();
-		 
-		 //sData = FrameworkTestData.prepareData();
-		 sData = xlReader.loadDataFromFile("c:/Users/sun/desktop/Book1.xlsx");
+		 xlReader.loadDataFromFile("c:/Users/sun/desktop/Book1.xlsx");
+		 sData = xlReader.getTestCaseList4Execution();
 	  }
 
 	  @Test
@@ -51,6 +52,6 @@ public class TestScenario {
 
 	  @After
 	  public void tearDown() throws Exception {
-
+		  TestResults.getInstance().writeResultsToExcel();
 	  }
 }
