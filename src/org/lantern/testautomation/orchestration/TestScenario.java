@@ -33,7 +33,7 @@ public class TestScenario {
 		  
 		 testCaseManager = new TestCaseManager();
 		 xlReader = new ExcelReader();
-		 xlReader.loadDataFromFile("c:/Users/sun/desktop/Book1.xlsx");
+		 xlReader.loadDataFromFile("Book1.xlsx");
 		 sData = xlReader.getTestCaseList4Execution();
 	  }
 
